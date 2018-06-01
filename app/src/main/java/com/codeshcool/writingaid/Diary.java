@@ -20,5 +20,25 @@ public class Diary extends Text {
         return this.intensifiers;
     }
 
-    public ArrayList<>
+
+    @Override
+    public void addToMap(String string) {
+        ArrayList<String> userInput = new ArrayList<>(Arrays.asList(string.split(" ")));
+        int number = 0;
+        for (String word : userInput) {
+            for (String lexeme : intensifiers){
+                if(word.equals(lexeme)){
+                    number += 1;
+                    myWords.put(word, number);
+
+                }
+
+            }
+
+        }
+
+    }
+
+
+
 }
