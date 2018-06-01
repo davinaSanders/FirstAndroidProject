@@ -19,4 +19,6 @@ public class Diary extends Text {
     public ArrayList<String> getIntensifiers() {
         return this.intensifiers;
     }
+
+    public ArrayList<>
 }

@@ -1,5 +1,6 @@
 package com.codeshcool.writingaid;
 
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -54,5 +55,11 @@ public class DiaryTest {
     @Test
     public void canCountWords(){
         assertEquals(11, diary.countWords("this has never been more fun. I will do this again."));
+    }
+
+    @Test
+    public void canAddToMap(){
+        diary.addToMap("this and then why how what green this and then why how how how");
+        Assert.assertEquals(7, diary.getMyWords());
     }
 }
