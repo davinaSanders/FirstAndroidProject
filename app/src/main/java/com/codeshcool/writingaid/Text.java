@@ -1,5 +1,6 @@
 package com.codeshcool.writingaid;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -49,8 +50,12 @@ public abstract class Text {
         return string.split("").length;
     }
 
-    public int averageWord(){
-        return
+    public int averageWordLength(String string){
+        int totalLetters = 0;
+         String[] words = string.split(" ");
+         for (word : words){
+             totalLetters += this.countLetters(word);
+         }
     }
 
     public int getMyWords(){

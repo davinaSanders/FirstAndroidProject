@@ -22,6 +22,24 @@ public class Creative extends Text{
     }
 
 
+    public ArrayList<String> getlexicalField(){
+        return this.lexicalField;
+
+    }
+
+
+    public int getScore(){
+        return this.score;
+    }
+
+    public int getSentenceLength(){
+        return this.sentenceLength;
+    }
+
+
+    public int getWordLength(){
+        return this.wordLength();
+    }
 
 
 }
