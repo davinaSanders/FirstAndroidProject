@@ -38,25 +38,44 @@ public abstract class Text {
     //getters
 
 
-    public int countSentences(String string){
-    return string.split("\\.").length;
+    public int countSentences(String string) {
+        return string.split("\\.").length;
     }
 
-    public int countWords(String string){
+    public int countWords(String string) {
         return string.split(" ").length;
     }
 
-    public int countLetters(String string){
+    public int countLetters(String string) {
         return string.split("").length;
     }
 
-    public int averageWordLength(String string){
+    public int averageWordLength(String string) {
         int totalLetters = 0;
-         String[] words = string.split(" ");
-         for (word : words){
-             totalLetters += this.countLetters(word);
-         }
+        int average = 0;
+        String[] words = string.split(" ");
+        for (int i=0; i<words.length; i++) {
+            for (String word : words) {
+                totalLetters += this.countLetters(word);
+            }
+             average = totalLetters / i;
+        }
+        return average;
     }
+
+    public int averageSentenceLength(String string) {
+        int totalWords = 0;
+        int average = 0;
+        String[] sentences = string.split("\\.");
+        for (int i=0; i<sentences.length; i++){
+            for (String sentence : sentences) {
+                totalWords += this.countWords(sentence);
+            }
+            average = totalWords/i;
+        }
+        return average;
+    }
+
 
     public int getMyWords(){
         return this.myWords.size();

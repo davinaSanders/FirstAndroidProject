@@ -38,7 +38,7 @@ public class Creative extends Text{
 
 
     public int getWordLength(){
-        return this.wordLength();
+        return this.wordLength;
     }
 
 
