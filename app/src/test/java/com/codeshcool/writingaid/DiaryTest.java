@@ -34,14 +34,25 @@ public class DiaryTest {
         assertEquals("Text1", diary.getTitle());
     }
 
-//    @Test
-//    public void hasWordCount(){
-//        assertEquals(0, diary.getWordCount());
-//    }
+    @Test
+    public void hasWordCount(){
+        assertEquals(0, diary.getWordCount());
+    }
 
     @Test
     public void hasMyWords(){
         diary.addToMap("there this that");
         assertEquals(3, diary.getMyWords());
+    }
+
+    @Test
+    public void canCountSentences(){
+        assertEquals(5, diary.countSentences("this has never been more fun. I will do this again. I love to type. Another sentence now. Even though it is not."));
+
+    }
+
+    @Test
+    public void canCountWords(){
+        assertEquals(11, diary.countWords("this has never been more fun. I will do this again."));
     }
 }

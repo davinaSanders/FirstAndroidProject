@@ -14,8 +14,6 @@ public class Essay extends Text{
         this.score = 0;
         this.sentenceLength = 0;
         this.wordLength = 0;
-
     }
-
 
 }

@@ -11,7 +11,7 @@ import java.util.HashMap;
 public abstract class Text {
     private String title;
     private String date;
-    protected Integer wordCount;
+    protected int wordCount;
     protected HashMap<String, Integer> myWords;
 
     public Text(String title, String date) {
@@ -22,7 +22,7 @@ public abstract class Text {
 
     }
 
-    public Integer getWordCount() {
+    public int getWordCount() {
         return this.wordCount;
     }
 
@@ -34,30 +34,29 @@ public abstract class Text {
         return this.date;
     }
 
-    public int getMyWords() {
+    //getters
+
+
+    public int countSentences(String string){
+    return string.split("\\.").length;
+    }
+
+    public int countWords(String string){
+        return string.split(" ").length;
+    }
+
+    public int countLetters(String string){
+        return string.split("").length;
+    }
+
+    public int averageWord(){
+        return
+    }
+
+    public int getMyWords(){
         return this.myWords.size();
     }
 
-    //getters
-
-//    public Integer countWords(){
-//
-//    }
-
-
-    //
-//    public int CountWords(String string){
-//        return string.split(" ").length;
-//    }
-//
-//    public String CountWordsMessage(String string){
-//        return  CountWords(string) + " words entered";
-//    }
-//
-//    public HashMap<String, Integer> getHashMap(){
-//        return this.myWords;
-//    }
-//
     public void addToMap(String string) {
         ArrayList<String> userInput = new ArrayList<>(Arrays.asList(string.split(" ")));
         int number = 0;

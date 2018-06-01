@@ -10,13 +10,13 @@ import java.util.Arrays;
 public class Diary extends Text {
     private ArrayList<String> intensifiers;
 
-    public Diary(String title, String date){
+    public Diary(String title, String date) {
         super(title, date);
         this.intensifiers = new ArrayList<>(Arrays.asList("really", "very", "extremely", "overwhelmingly", "incredibly"));
 
     }
 
-    public ArrayList<String> getIntensifiers(){
+    public ArrayList<String> getIntensifiers() {
         return this.intensifiers;
     }
 }
