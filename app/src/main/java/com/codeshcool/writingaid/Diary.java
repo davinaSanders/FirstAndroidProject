@@ -24,8 +24,8 @@ public class Diary extends Text {
     }
 
 
-    @Override
-    public void addToMap(String string) {
+
+    public void specialWordsCount(String string) {
         ArrayList<String> userInput = new ArrayList<>(Arrays.asList(string.split(" ")));
         int number = 0;
         for (String word : userInput) {

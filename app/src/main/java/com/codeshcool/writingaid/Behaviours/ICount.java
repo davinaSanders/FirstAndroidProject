@@ -6,11 +6,11 @@ package com.codeshcool.writingaid.Behaviours;
 
 public interface ICount {
 
-    int SpecialWordsCount();
+    int specialWordsCount();
 
-    void RepeatedWords();
+    void repeatedWords();
 
-    void UniqueWords();
+    void uniqueWords();
 
     // this will be a percentage of unique words
     // for the Creative and the list of unique words for the diary.

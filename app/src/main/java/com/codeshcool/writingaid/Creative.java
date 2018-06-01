@@ -2,6 +2,7 @@ package com.codeshcool.writingaid;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Map;
 
 /**
  * Created by davinasanders on 01/06/2018.
@@ -41,6 +42,31 @@ public class Creative extends Text{
         return this.wordLength;
     }
 
+    public ArrayList<String> repeatedWords(String string){
+        ArrayList<String> repeats = new ArrayList<>();
+        this.addToMap(string);
+        for (Map.Entry me : myWords.entrySet()) {
+            if(Integer.valueOf((int)me.getKey())>1){
+                repeats.add(me.getKey().toString());
+            }
+
+        }
+        return repeats;
+    }
+
+    public int uniqueWords(String string){
+        ArrayList<String> uniques = new ArrayList<>();
+        this.addToMap(string);
+        for (Map.Entry me : myWords.entrySet()) {
+            if(Integer.valueOf((int)me.getKey())<=1){
+                uniques.add(me.getKey().toString());
+            }
+
+        }
+        return uniques.size();
+
+    }
+
     public void addLexicalField(String string){
         ArrayList<String> userInput = new ArrayList<>(Arrays.asList(string.split(" ")));
         for (String word : userInput) {
@@ -49,8 +75,8 @@ public class Creative extends Text{
     }
 
 
-    @Override
-    public void addToMap(String string) {
+
+    public void specialWordsCount(String string) {
         ArrayList<String> userInput = new ArrayList<>(Arrays.asList(string.split(" ")));
         int number = 0;
         for (String word : userInput) {
@@ -66,6 +92,7 @@ public class Creative extends Text{
         }
 
     }
+
 
 
 }
