@@ -5,4 +5,6 @@ package com.codeshcool.writingaid.Behaviours;
  */
 
 public interface ICount {
+
+
 }
