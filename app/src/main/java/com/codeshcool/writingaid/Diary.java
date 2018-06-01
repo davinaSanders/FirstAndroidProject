@@ -2,6 +2,9 @@ package com.codeshcool.writingaid;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Map;
+import java.util.HashMap;
+import java.util.Iterator;
 
 /**
  * Created by davinasanders on 31/05/2018.
@@ -37,6 +40,18 @@ public class Diary extends Text {
 
         }
 
+    }
+
+    public ArrayList<String> repeatedWords(String string){
+        ArrayList<String> repeats = new ArrayList<>();
+       this.addToMap(string);
+        for (Map.Entry me : myWords.entrySet()) {
+            if(Integer.valueOf((int)me.getKey())>1){
+             repeats.add(me.getKey().toString());
+        }
+
+        }
+        return repeats;
     }
 
 

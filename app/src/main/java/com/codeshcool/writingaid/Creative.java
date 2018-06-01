@@ -41,6 +41,13 @@ public class Creative extends Text{
         return this.wordLength;
     }
 
+    public void addLexicalField(String string){
+        ArrayList<String> userInput = new ArrayList<>(Arrays.asList(string.split(" ")));
+        for (String word : userInput) {
+            this.lexicalField.add(word);
+        }
+    }
+
 
     @Override
     public void addToMap(String string) {

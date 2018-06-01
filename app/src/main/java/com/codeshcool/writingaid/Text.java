@@ -89,4 +89,5 @@ public abstract class Text {
             myWords.put(word, number);
         }
     }
+
 }
