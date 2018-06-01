@@ -42,4 +42,23 @@ public class Creative extends Text{
     }
 
 
+    @Override
+    public void addToMap(String string) {
+        ArrayList<String> userInput = new ArrayList<>(Arrays.asList(string.split(" ")));
+        int number = 0;
+        for (String word : userInput) {
+            for (String lexeme : lexicalField){
+                if(word.equals(lexeme)){
+                    number += 1;
+                    myWords.put(word, number);
+
+                }
+
+            }
+
+        }
+
+    }
+
+
 }
