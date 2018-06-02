@@ -1,5 +1,7 @@
 package com.codeshcool.writingaid;
 
+import com.codeshcool.writingaid.Behaviours.ICount;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Map;
@@ -10,7 +12,7 @@ import java.util.Iterator;
  * Created by davinasanders on 31/05/2018.
  */
 
-public class Diary extends Text {
+public class Diary extends Text implements ICount {
     private ArrayList<String> intensifiers;
 
     public Diary(String title, String date) {
@@ -39,6 +41,19 @@ public class Diary extends Text {
             }
 
         }
+
+    }
+
+    public int uniqueWords(String string){
+        ArrayList<String> uniques = new ArrayList<>();
+        this.addToMap(string);
+        for (Map.Entry me : myWords.entrySet()) {
+            if(Integer.valueOf((int)me.getKey())<=1){
+                uniques.add(me.getKey().toString());
+            }
+
+        }
+        return uniques.size();
 
     }
 

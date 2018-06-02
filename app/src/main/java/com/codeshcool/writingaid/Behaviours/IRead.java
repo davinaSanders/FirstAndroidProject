@@ -6,5 +6,5 @@ package com.codeshcool.writingaid.Behaviours;
 
 public interface IRead {
 
-    int readabilityScore();
+    double readabilityScore(String string);
 }

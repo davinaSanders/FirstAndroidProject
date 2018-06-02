@@ -1,5 +1,8 @@
 package com.codeshcool.writingaid;
 
+import com.codeshcool.writingaid.Behaviours.ICount;
+import com.codeshcool.writingaid.Behaviours.IRead;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Map;
@@ -8,7 +11,7 @@ import java.util.Map;
  * Created by davinasanders on 01/06/2018.
  */
 
-public class Creative extends Text{
+public class Creative extends Text implements IRead, ICount {
     private Integer score;
     private Integer sentenceLength;
     private Integer wordLength;
@@ -54,7 +57,7 @@ public class Creative extends Text{
         return repeats;
     }
 
-    public int uniqueWords(String string){
+    public int uniqueWordsCount(String string){
         ArrayList<String> uniques = new ArrayList<>();
         this.addToMap(string);
         for (Map.Entry me : myWords.entrySet()) {
@@ -64,6 +67,11 @@ public class Creative extends Text{
 
         }
         return uniques.size();
+
+    }
+
+    public int uniqueWords(String string){
+        return (this.uniqueWordsCount(string)/this.wordCount) * 100;
 
     }
 
@@ -93,6 +101,34 @@ public class Creative extends Text{
 
     }
 
+    public double countSyllables(String string){
+        String[] vowels = new String[]{"a", "e", "i", "o", "u", "y"};
+        double syllableCounter = 0;
+        ArrayList<String> userInput = new ArrayList<>(Arrays.asList(string.split(" ")));
+        for (String word : userInput) {
+            String[] letters = word.split("");
+            for (int i=0; i<letters.length; i++){
+                for (String letter : letters){
+                    for (String vowel : vowels){
+                        if ((letter.equals(vowel) && (i>letters.length-1)){
+                            if (!letters[i+1].equals(vowel)){
+                                syllableCounter ++;
 
+                            }
+                        }
+                    }
+
+                }
+
+            }
+
+        }
+        return syllableCounter;
+    }
+
+    public double readabilityScore(String string){
+        return (0.39 * (countWords(string)/countSentences(string))) + (11.8 * (countSyllables(string)/countWords(string))) - 15.59;
+
+    }
 
 }

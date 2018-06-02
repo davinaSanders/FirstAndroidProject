@@ -1,16 +1,18 @@
 package com.codeshcool.writingaid.Behaviours;
 
+import java.util.ArrayList;
+
 /**
  * Created by davinasanders on 01/06/2018.
  */
 
 public interface ICount {
 
-    int specialWordsCount();
+    void specialWordsCount(String string);
 
-    void repeatedWords();
+    ArrayList<String> repeatedWords(String string);
 
-    void uniqueWords();
+    int uniqueWords(String string);
 
     // this will be a percentage of unique words
     // for the Creative and the list of unique words for the diary.
