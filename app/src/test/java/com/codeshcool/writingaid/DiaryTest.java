@@ -16,7 +16,7 @@ public class DiaryTest {
 
     @Before
     public void before(){
-        diary = new Diary("Text1", "01/06/2018");
+        diary = new Diary(1, "01/06/2018");
     }
 
     @Test
@@ -25,8 +25,8 @@ public class DiaryTest {
     }
 
     @Test
-    public void hasTitle(){
-        assertEquals("Text1", diary.getTitle());
+    public void hasEntry(){
+        assertEquals(1, diary.getEntry());
     }
 
     @Test

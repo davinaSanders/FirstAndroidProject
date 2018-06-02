@@ -16,8 +16,8 @@ import java.util.Iterator;
 public class Diary extends Text implements ICount, Serializable {
     private ArrayList<String> intensifiers;
 
-    public Diary(String title, String date) {
-        super(title, date);
+    public Diary(int entry, String date) {
+        super(entry, date);
         this.intensifiers = new ArrayList<>(Arrays.asList("really", "very", "extremely", "overwhelmingly", "incredibly"));
 
     }

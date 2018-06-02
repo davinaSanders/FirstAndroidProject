@@ -15,8 +15,8 @@ import java.util.Map;
 public class Creative extends Text implements IRead, ICount, Serializable {
     private ArrayList<String> lexicalField;
 
-    public Creative(String title, String date){
-        super(title, date);
+    public Creative(int entry, String date){
+        super(entry, date);
         this.lexicalField = new ArrayList<>();
 
     }

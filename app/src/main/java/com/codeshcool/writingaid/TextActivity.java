@@ -17,6 +17,7 @@ public class TextActivity extends AppCompatActivity {
     Button diaryButton;
     Button academicButton;
     TextView dateView;
+    String currentDateTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,25 +28,25 @@ public class TextActivity extends AppCompatActivity {
         diaryButton = findViewById(R.id.diaryButtonID);
         academicButton = findViewById(R.id.essayButtonID);
         dateView = findViewById(R.id.dateViewID);
+        currentDateTime = DateFormat.getDateTimeInstance().format(new Date());
 
         getCurrentDate(dateView);
 
     }
 
     public void getCurrentDate(View view) {
-        String currentDateTimeString = DateFormat.getDateTimeInstance().format(new Date());
-        dateView.setText(currentDateTimeString);
+        dateView.setText(this.currentDateTime);
     }
 
     public void onButtonCreativeClick(View view){
-        Creative creative = new Creative("test", "02/06/2018");
+        Creative creative = new Creative(1, this.currentDateTime);
         Intent intent = new Intent(this, CreativeActivity.class);
         intent.putExtra("creative", creative);
         startActivity(intent);
     }
 
     public void onButtonDiaryClick(View view){
-        Diary diary = new Diary("test", "02/06/2018");
+        Diary diary = new Diary(1, this.currentDateTime);
         Intent intent = new Intent(this, DiaryActivity.class);
         intent.putExtra("diary", diary);
         startActivity(intent);
@@ -53,7 +54,7 @@ public class TextActivity extends AppCompatActivity {
     }
 
     public void onButtonEssayClick(View view){
-        Essay essay = new Essay("test", "02/06/2018");
+        Essay essay = new Essay(1, this.currentDateTime);
         Intent intent = new Intent(this, EssayActivity.class);
         intent.putExtra("essay", essay);
         startActivity(intent);

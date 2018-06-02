@@ -14,8 +14,8 @@ import java.util.Arrays;
 public class Essay extends Text implements IRead, Serializable {
 
 
-    public Essay(String title, String date){
-        super(title, date);
+    public Essay(int entry, String date){
+        super(entry, date);
 
     }
 

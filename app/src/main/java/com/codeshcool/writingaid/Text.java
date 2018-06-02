@@ -10,13 +10,13 @@ import java.util.HashMap;
  */
 
 public abstract class Text {
-    private String title;
+    private int entry;
     private String date;
     protected int wordCount;
     protected HashMap<String, Integer> myWords;
 
-    public Text(String title, String date) {
-        this.title = title;
+    public Text(int entry, String date) {
+        this.entry = entry;
         this.date = date;
         this.wordCount = 0;
         this.myWords = new HashMap<>();
@@ -27,8 +27,8 @@ public abstract class Text {
         return this.wordCount;
     }
 
-    public String getTitle() {
-        return this.title;
+    public int getEntry() {
+        return this.entry;
     }
 
     public String getDate() {

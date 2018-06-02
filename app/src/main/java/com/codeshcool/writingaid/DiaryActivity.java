@@ -3,6 +3,7 @@ package com.codeshcool.writingaid;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 
 public class DiaryActivity extends AppCompatActivity {
 
@@ -14,5 +15,7 @@ public class DiaryActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         Diary diary = (Diary)intent.getSerializableExtra("diary");
+
+        Log.d("Essay Activity: ", diary.getDate());
     }
 }
