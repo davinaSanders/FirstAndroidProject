@@ -5,11 +5,18 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
 public class TextActivity extends AppCompatActivity {
     Button creativeButton;
     Button diaryButton;
     Button academicButton;
+    TextView dateView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +26,15 @@ public class TextActivity extends AppCompatActivity {
         creativeButton = findViewById(R.id.creativeButtonID);
         diaryButton = findViewById(R.id.diaryButtonID);
         academicButton = findViewById(R.id.essayButtonID);
+        dateView = findViewById(R.id.dateViewID);
 
+        getCurrentDate(dateView);
+
+    }
+
+    public void getCurrentDate(View view) {
+        String currentDateTimeString = DateFormat.getDateTimeInstance().format(new Date());
+        dateView.setText(currentDateTimeString);
     }
 
     public void onButtonCreativeClick(View view){
