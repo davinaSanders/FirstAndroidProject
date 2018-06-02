@@ -3,6 +3,7 @@ package com.codeshcool.writingaid;
 import com.codeshcool.writingaid.Behaviours.ICount;
 import com.codeshcool.writingaid.Behaviours.IRead;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Map;
@@ -11,7 +12,7 @@ import java.util.Map;
  * Created by davinasanders on 01/06/2018.
  */
 
-public class Creative extends Text implements IRead, ICount {
+public class Creative extends Text implements IRead, ICount, Serializable {
     private ArrayList<String> lexicalField;
 
     public Creative(String title, String date){

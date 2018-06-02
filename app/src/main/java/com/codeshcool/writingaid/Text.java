@@ -50,23 +50,27 @@ public abstract class Text {
         return string.split(" ").length;
     }
 
-    public int countLetters(String string) {
+    public int countCharacters(String string) {
         return string.split("").length;
     }
 
-    public double countSyllables(String string){
+    public int countSyllables(String string) {
         String[] vowels = new String[]{"a", "e", "i", "o", "u", "y"};
-        double syllableCounter = 0;
+        int syllableCounter = 0;
         ArrayList<String> userInput = new ArrayList<>(Arrays.asList(string.split(" ")));
         for (String word : userInput) {
+//            System.out.println(word.toString());
             String[] letters = word.split("");
-            for (int i=0; i<letters.length; i++){
-                for (String letter : letters){
-                    for (String vowel : vowels){
-                        if ((letter.equals(vowel)) && (i>letters.length-1)){
-                            if (!letters[i+1].equals(vowel)){
-                                syllableCounter ++;
-
+            for (int i = 0; i < letters.length; i++) {
+                for (String letter : letters) {
+//                    System.out.println(letter.toString());
+//                    for (String vowel : vowels){
+//                        System.out.println(vowel.toString());
+                    if ((Arrays.asList(vowels).contains(letter))) {
+                        if (!(((i == letters.length)) && (letter.equals("e")))) {
+                            syllableCounter++;
+                            if (Arrays.asList(vowels).contains(letters[i + 1])) {
+                                i++;
                             }
                         }
                     }
@@ -77,7 +81,11 @@ public abstract class Text {
 
         }
         return syllableCounter;
+
     }
+
+
+
 
     // Counters
 
@@ -85,12 +93,10 @@ public abstract class Text {
         int totalLetters = 0;
         int average = 0;
         String[] words = string.split(" ");
-        for (int i=0; i<words.length; i++) {
             for (String word : words) {
-                totalLetters += this.countLetters(word);
+                totalLetters += this.countCharacters(word);
             }
-             average = totalLetters / i;
-        }
+             average = totalLetters / words.length;
         return average;
     }
 
@@ -98,12 +104,11 @@ public abstract class Text {
         int totalWords = 0;
         int average = 0;
         String[] sentences = string.split("\\.");
-        for (int i=0; i<sentences.length; i++){
+
             for (String sentence : sentences) {
                 totalWords += this.countWords(sentence);
             }
-            average = totalWords/i;
-        }
+            average = totalWords/sentences.length;
         return average;
     }
 

@@ -2,6 +2,7 @@ package com.codeshcool.writingaid;
 
 import com.codeshcool.writingaid.Behaviours.ICount;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Map;
@@ -12,7 +13,7 @@ import java.util.Iterator;
  * Created by davinasanders on 31/05/2018.
  */
 
-public class Diary extends Text implements ICount {
+public class Diary extends Text implements ICount, Serializable {
     private ArrayList<String> intensifiers;
 
     public Diary(String title, String date) {
@@ -45,11 +46,12 @@ public class Diary extends Text implements ICount {
             return myWords.size();
     }
 
+
     public int uniqueWordsCount(String string){
         ArrayList<String> uniques = new ArrayList<>();
         this.addToMap(string);
         for (Map.Entry me : myWords.entrySet()) {
-            if(Integer.valueOf((int)me.getKey())<=1){
+            if(Integer.valueOf((int)me.getValue())==0){
                 uniques.add(me.getKey().toString());
             }
 
@@ -61,8 +63,9 @@ public class Diary extends Text implements ICount {
     public int repeatedWordsCount(String string){
         ArrayList<String> repeats = new ArrayList<>();
         this.addToMap(string);
+        System.out.println(myWords.size());
         for (Map.Entry me : myWords.entrySet()) {
-            if(Integer.valueOf((int)me.getKey())>1){
+            if(Integer.valueOf((int)me.getValue())>0){
                 repeats.add(me.getKey().toString());
             }
 
