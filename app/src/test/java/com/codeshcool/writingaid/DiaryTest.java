@@ -20,15 +20,9 @@ public class DiaryTest {
     }
 
     @Test
-    public void hasDate(){
-        assertEquals("01/06/2018", diary.getDate());
+    public void hasWordCount(){
+        assertEquals(0, diary.getWordCount());
     }
-
-    @Test
-    public void hasIntensfiers(){
-        assertEquals(5, diary.getIntensifiers().size());
-    }
-
 
     @Test
     public void hasTitle(){
@@ -36,14 +30,21 @@ public class DiaryTest {
     }
 
     @Test
-    public void hasWordCount(){
-        assertEquals(0, diary.getWordCount());
+    public void hasDate(){
+        assertEquals("01/06/2018", diary.getDate());
     }
 
     @Test
     public void hasMyWords(){
         diary.addToMap("there this that");
-        assertEquals(3, diary.getMyWords());
+        assertEquals(3, diary.getMyWordsCount());
+    }
+
+    // getters
+
+    @Test
+    public void hasIntensfiers(){
+        assertEquals(5, diary.getIntensifiers().size());
     }
 
     @Test
@@ -60,6 +61,6 @@ public class DiaryTest {
     @Test
     public void canAddToMap(){
         diary.addToMap("this and then why how what green this and then why how how how");
-        Assert.assertEquals(7, diary.getMyWords());
+        Assert.assertEquals(7, diary.getMyWordsCount());
     }
 }

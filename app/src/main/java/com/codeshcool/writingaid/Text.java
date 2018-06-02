@@ -35,6 +35,10 @@ public abstract class Text {
         return this.date;
     }
 
+    public int getMyWordsCount(){
+        return this.myWords.size();
+    }
+
     //getters
 
 
@@ -49,6 +53,33 @@ public abstract class Text {
     public int countLetters(String string) {
         return string.split("").length;
     }
+
+    public double countSyllables(String string){
+        String[] vowels = new String[]{"a", "e", "i", "o", "u", "y"};
+        double syllableCounter = 0;
+        ArrayList<String> userInput = new ArrayList<>(Arrays.asList(string.split(" ")));
+        for (String word : userInput) {
+            String[] letters = word.split("");
+            for (int i=0; i<letters.length; i++){
+                for (String letter : letters){
+                    for (String vowel : vowels){
+                        if ((letter.equals(vowel)) && (i>letters.length-1)){
+                            if (!letters[i+1].equals(vowel)){
+                                syllableCounter ++;
+
+                            }
+                        }
+                    }
+
+                }
+
+            }
+
+        }
+        return syllableCounter;
+    }
+
+    // Counters
 
     public int averageWordLength(String string) {
         int totalLetters = 0;
@@ -76,10 +107,8 @@ public abstract class Text {
         return average;
     }
 
+    // averages
 
-    public int getMyWords(){
-        return this.myWords.size();
-    }
 
     public void addToMap(String string) {
         ArrayList<String> userInput = new ArrayList<>(Arrays.asList(string.split(" ")));
@@ -89,5 +118,7 @@ public abstract class Text {
             myWords.put(word, number);
         }
     }
+
+    // record all the words and their frequency in a hashmap
 
 }

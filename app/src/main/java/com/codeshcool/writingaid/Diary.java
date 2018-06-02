@@ -25,9 +25,10 @@ public class Diary extends Text implements ICount {
         return this.intensifiers;
     }
 
+    //getter
 
 
-    public void specialWordsCount(String string) {
+    public int specialWordsCount(String string) {
         ArrayList<String> userInput = new ArrayList<>(Arrays.asList(string.split(" ")));
         int number = 0;
         for (String word : userInput) {
@@ -41,10 +42,10 @@ public class Diary extends Text implements ICount {
             }
 
         }
-
+            return myWords.size();
     }
 
-    public int uniqueWords(String string){
+    public int uniqueWordsCount(String string){
         ArrayList<String> uniques = new ArrayList<>();
         this.addToMap(string);
         for (Map.Entry me : myWords.entrySet()) {
@@ -57,18 +58,31 @@ public class Diary extends Text implements ICount {
 
     }
 
-    public ArrayList<String> repeatedWords(String string){
+    public int repeatedWordsCount(String string){
         ArrayList<String> repeats = new ArrayList<>();
-       this.addToMap(string);
+        this.addToMap(string);
         for (Map.Entry me : myWords.entrySet()) {
             if(Integer.valueOf((int)me.getKey())>1){
-             repeats.add(me.getKey().toString());
+                repeats.add(me.getKey().toString());
+            }
+
         }
+        return repeats.size();
+    }
+
+
+    //ICount methods
+
+
+    public ArrayList<String> repeatedWords(String string){
+        ArrayList<String> repeats = new ArrayList<>();
+        this.addToMap(string);
+        for (Map.Entry me : myWords.entrySet()) {
+            if(Integer.valueOf((int)me.getKey())>1){
+                repeats.add(me.getKey().toString());
+            }
 
         }
         return repeats;
     }
-
-
-
 }
