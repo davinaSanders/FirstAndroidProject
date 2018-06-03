@@ -36,14 +36,30 @@ public class CreativeActivity extends AppCompatActivity {
 
     public void onButtonCreativeAnalysisClick(View view){
         String userInput = insert.getText().toString();
-        double result = essay.readabilityScore(userInput);
-        String resultString = Double.toString(result);
-        analysis.setText(resultString);
 
-    }
+        String userField = lexicalField.getText().toString();
+        creative.addLexicalField(userInput);
 
-    public void onButtonLexicalFieldClick(View view){
-       String userInput = lexicalField.getText().toString();
+        int specialWords = creative.specialWordsCount(userInput);
+        String stringSpecialWords = String.valueOf(specialWords);
+
+        int wordCount = creative.countWords(userInput);
+        String stringWordCount = String.valueOf(wordCount);
+
+        int uniqueWords = creative.uniqueWordsCount(userInput);
+        String stringUniqueWords = String.valueOf(uniqueWords);
+
+        int wordLength = creative.averageSentenceLength(userInput);
+        String stringWordLength = String.valueOf(wordLength);
+
+        int sentenceLength = creative.averageWordLength(userInput);
+        String stringSentenceLength = String.valueOf(sentenceLength);
+
+        analysis.setText("Number of words used from Lexical Field: " + stringSpecialWords
+                + "\nWord Count: " + stringWordCount
+                + "\nNumber of unique words: " + stringUniqueWords
+                + "\nAverage Number of characters per word: " + stringWordLength
+                + "\nAverage Number of words per sentence : " + stringSentenceLength);
 
     }
 
