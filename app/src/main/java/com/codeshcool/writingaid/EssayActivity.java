@@ -43,7 +43,8 @@ public class EssayActivity extends AppCompatActivity {
         String userInput = insert.getText().toString();
         double result = essay.readabilityScore(userInput);
         String resultString = Double.toString(result);
-        analysis.setText(resultString);
+        analysis.setText("Readability score: " + resultString
+                        + "\nWord Count: " + );
 
     }
 

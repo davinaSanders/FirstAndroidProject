@@ -55,9 +55,9 @@ public class DiaryActivity extends AppCompatActivity {
 
         analysis.setText("Number of words used from Lexical Field: " + stringSpecialWords
                 + "\nWord Count: " + stringWordCount
-                + "\nNumber of unique words: " + stringUniqueWords
-                + "\nAverage Number of characters per word: " + stringWordLength
-                + "\nAverage Number of words per sentence : " + stringSentenceLength);
+                + "\nUnique words: " + stringUniqueWords
+                + "\nAverage Characters per word: " + stringWordLength
+                + "\nAverage Words per sentence : " + stringSentenceLength);
 
     }
 }

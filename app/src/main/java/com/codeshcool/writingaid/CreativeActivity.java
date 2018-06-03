@@ -38,7 +38,7 @@ public class CreativeActivity extends AppCompatActivity {
         String userInput = insert.getText().toString();
 
         String userField = lexicalField.getText().toString();
-        creative.addLexicalField(userInput);
+        creative.addLexicalField(userField);
 
         int specialWords = creative.specialWordsCount(userInput);
         String stringSpecialWords = String.valueOf(specialWords);
@@ -55,11 +55,11 @@ public class CreativeActivity extends AppCompatActivity {
         int sentenceLength = creative.averageWordLength(userInput);
         String stringSentenceLength = String.valueOf(sentenceLength);
 
-        analysis.setText("Number of words used from Lexical Field: " + stringSpecialWords
+        analysis.setText("Lexical Field Matches: " + stringSpecialWords
                 + "\nWord Count: " + stringWordCount
-                + "\nNumber of unique words: " + stringUniqueWords
-                + "\nAverage Number of characters per word: " + stringWordLength
-                + "\nAverage Number of words per sentence : " + stringSentenceLength);
+                + "\nUnique words: " + stringUniqueWords
+                + "\nAverage Characters per word: " + stringWordLength
+                + "\nAverage Words per sentence : " + stringSentenceLength);
 
     }
 
