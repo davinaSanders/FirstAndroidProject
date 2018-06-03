@@ -89,12 +89,6 @@ public class DiaryTest {
             assertEquals(7, diary.getMyWords().size());
         }
 
-//
-//        @Test
-//        public void canAddToMap__frequencyCheck(){
-//        diary.addToMap("this and then why how what green this and then why how how how");
-//        assertEquals(2, diary.getMyWords().get("and").toString());
-//    }
 
         @Test
         public void hasSpecialWordsCount() {
