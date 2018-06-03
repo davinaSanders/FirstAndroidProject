@@ -4,32 +4,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.codeshcool.writingaid.DiaryActivity">
+    tools:context="com.codeshcool.writingaid.CreativeActivity">
 
     <TextView
-        android:id="@+id/diaryTextViewID"
-        android:layout_width="291dp"
-        android:layout_height="183dp"
+        android:id="@+id/creativeTextViewID"
+        android:layout_width="311dp"
+        android:layout_height="161dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:hint="Insert text..."
         android:maxLines="10"
-
         android:scrollbars="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.862" />
 
     <Button
-        android:id="@+id/analysisButtonID"
+        android:id="@+id/analysisButtonID2"
         android:layout_width="299dp"
         android:layout_height="36dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="236dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
@@ -39,15 +38,16 @@
         app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.581" />
+        app:layout_constraintVertical_bias="0.991" />
 
     <EditText
-        android:id="@+id/editText2"
-        android:layout_width="319dp"
-        android:layout_height="230dp"
+        android:id="@+id/editText"
+        android:layout_width="305dp"
+        android:layout_height="193dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:hint="Insert text..."
-        tools:layout_editor_absoluteX="28dp"
-        tools:layout_editor_absoluteY="32dp" />
+        tools:layout_editor_absoluteX="37dp"
+        tools:layout_editor_absoluteY="27dp" />
+
 </android.support.constraint.ConstraintLayout>

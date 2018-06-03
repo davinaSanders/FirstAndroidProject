@@ -41,14 +41,14 @@ public class TextActivity extends AppCompatActivity {
     public void onButtonCreativeClick(View view){
         Creative creative = new Creative(1, this.currentDateTime);
         Intent intent = new Intent(this, CreativeActivity.class);
-        intent.putExtra("creative", creative);
+//        intent.putExtra("creative", creative);
         startActivity(intent);
     }
 
     public void onButtonDiaryClick(View view){
         Diary diary = new Diary(1, this.currentDateTime);
         Intent intent = new Intent(this, DiaryActivity.class);
-        intent.putExtra("diary", diary);
+//        intent.putExtra("diary", diary);
         startActivity(intent);
 
     }
@@ -56,7 +56,7 @@ public class TextActivity extends AppCompatActivity {
     public void onButtonEssayClick(View view){
         Essay essay = new Essay(1, this.currentDateTime);
         Intent intent = new Intent(this, EssayActivity.class);
-        intent.putExtra("essay", essay);
+//        intent.putExtra("essay", essay);
         startActivity(intent);
 
     }

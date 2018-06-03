@@ -35,6 +35,8 @@ public abstract class Text {
         return this.date;
     }
 
+    public HashMap<String, Integer> getMyWords() { return this.myWords;}
+
     public int getMyWordsCount(){
         return this.myWords.size();
     }
@@ -57,33 +59,30 @@ public abstract class Text {
     public int countSyllables(String string) {
         String[] vowels = new String[]{"a", "e", "i", "o", "u", "y"};
         int syllableCounter = 0;
-        ArrayList<String> userInput = new ArrayList<>(Arrays.asList(string.split(" ")));
+        ArrayList<String> userInput = new ArrayList<>(Arrays.asList(string.replace(".", "").toLowerCase().split(" ")));
+        System.out.println(userInput);
         for (String word : userInput) {
-//            System.out.println(word.toString());
             String[] letters = word.split("");
+            System.out.println(letters);
             for (int i = 0; i < letters.length; i++) {
-                for (String letter : letters) {
-//                    System.out.println(letter.toString());
-//                    for (String vowel : vowels){
-//                        System.out.println(vowel.toString());
-                    if ((Arrays.asList(vowels).contains(letter))) {
-                        if (!(((i == letters.length)) && (letter.equals("e")))) {
+                System.out.println(letters.length);
+                    if ((Arrays.asList(vowels).contains(letters[i]))) {
+                        if (!(((i == letters.length-1)) && (letters[i].equals("e")))) {
                             syllableCounter++;
-                            if (Arrays.asList(vowels).contains(letters[i + 1])) {
-                                i++;
+                            System.out.println(syllableCounter);
+                            System.out.println(letters[i]);
+                            System.out.println(letters.length);
+                            if (i < letters.length-1){
+                                if (Arrays.asList(vowels).contains(letters[i + 1])) {
+                                    i ++;
+                                }
                             }
                         }
                     }
-
                 }
-
             }
-
+            return syllableCounter;
         }
-        return syllableCounter;
-
-    }
-
 
 
 
@@ -117,10 +116,14 @@ public abstract class Text {
 
     public void addToMap(String string) {
         ArrayList<String> userInput = new ArrayList<>(Arrays.asList(string.split(" ")));
-        int number = 0;
+        int number = 1;
         for (String word : userInput) {
-            number += 1;
-            myWords.put(word, number);
+            if(!(myWords.containsKey(word))) {
+                myWords.put(word, number);
+            } else {
+                myWords.put(word, myWords.get(word) + 1);
+
+                }
         }
     }
 

@@ -42,7 +42,7 @@ public class Creative extends Text implements IRead, ICount, Serializable {
         ArrayList<String> uniques = new ArrayList<>();
         this.addToMap(string);
         for (Map.Entry me : myWords.entrySet()) {
-            if(Integer.valueOf((int)me.getKey())<=1){
+            if(Integer.valueOf((int)me.getKey())==1){
                 uniques.add(me.getKey().toString());
             }
 

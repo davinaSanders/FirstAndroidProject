@@ -51,7 +51,7 @@ public class Diary extends Text implements ICount, Serializable {
         ArrayList<String> uniques = new ArrayList<>();
         this.addToMap(string);
         for (Map.Entry me : myWords.entrySet()) {
-            if(Integer.valueOf((int)me.getValue())==0){
+            if(Integer.valueOf((int)me.getValue())==1){
                 uniques.add(me.getKey().toString());
             }
 
@@ -65,7 +65,7 @@ public class Diary extends Text implements ICount, Serializable {
         this.addToMap(string);
         System.out.println(myWords.size());
         for (Map.Entry me : myWords.entrySet()) {
-            if(Integer.valueOf((int)me.getValue())>0){
+            if(Integer.valueOf((int)me.getValue())>1){
                 repeats.add(me.getKey().toString());
             }
 
