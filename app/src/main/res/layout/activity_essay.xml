@@ -14,9 +14,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:hint="Insert text..."
-        android:maxLines="10"
-        android:scrollbars="vertical"
+        android:hint="Analysis"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.506"
@@ -32,6 +30,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:onClick="onButtonEssayAnalysisClick"
         android:text="Analyse Text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -41,13 +40,26 @@
         app:layout_constraintVertical_bias="0.599" />
 
     <EditText
-        android:id="@+id/editText3"
-        android:layout_width="302dp"
-        android:layout_height="229dp"
+        android:id="@+id/essayAnalysis"
+        android:layout_width ="0dip"
+        android:layout_height ="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
-        android:inputType="textPersonName"
         android:hint="Insert text..."
-        tools:layout_editor_absoluteX="37dp"
-        tools:layout_editor_absoluteY="38dp" />
+
+
+        android:layout_weight ="1"
+        android:inputType="textCapSentences|textMultiLine"
+        android:maxLines ="10"
+        android:maxLength ="2000"
+        android:scrollHorizontally="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.112" />
 
 </android.support.constraint.ConstraintLayout>

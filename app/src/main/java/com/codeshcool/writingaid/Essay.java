@@ -19,6 +19,10 @@ public class Essay extends Text implements IRead, Serializable {
 
     }
 
+    public String hello(){
+        return "hello";
+    }
+
 
     public double readabilityScore(String string){
         return (0.39 * (countWords(string)/countSentences(string))) + (11.8 * (countSyllables(string)/countWords(string))) - 15.59;

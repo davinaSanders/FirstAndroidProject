@@ -14,9 +14,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:hint="Insert text..."
-        android:maxLines="10"
-        android:scrollbars="vertical"
+        android:hint="Analysis"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.508"
@@ -25,7 +23,7 @@
         app:layout_constraintVertical_bias="0.862" />
 
     <Button
-        android:id="@+id/analysisButtonID2"
+        android:id="@+id/analysisButtonID3"
         android:layout_width="299dp"
         android:layout_height="36dp"
         android:layout_marginBottom="236dp"
@@ -41,13 +39,58 @@
         app:layout_constraintVertical_bias="0.991" />
 
     <EditText
-        android:id="@+id/editText"
-        android:layout_width="305dp"
-        android:layout_height="193dp"
+        android:id="@+id/creativeAnalysis"
+        android:layout_width="314dp"
+        android:layout_height="148dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_weight="1"
         android:ems="10"
-        android:inputType="textPersonName"
         android:hint="Insert text..."
-        tools:layout_editor_absoluteX="37dp"
-        tools:layout_editor_absoluteY="27dp" />
+        android:inputType="textCapSentences|textMultiLine"
+        android:maxLength="2000"
+        android:maxLines="10"
+        android:scrollHorizontally="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023" />
+
+    <EditText
+        android:id="@+id/lexicalField"
+        android:layout_width="185dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="Type lexical field here. Please use a space to separate your words"
+        android:inputType="textShortMessage"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.043"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.386" />
+
+    <Button
+        android:id="@+id/lexicalButtonID"
+        android:layout_width="142dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Create Field"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintStart_toEndOf="@+id/lexicalField"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.384" />
 
 </android.support.constraint.ConstraintLayout>
