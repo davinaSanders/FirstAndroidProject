@@ -17,6 +17,6 @@ The app should help them keep track of statistics that may aid them in their wri
 * Word length
 The feedback types should be tailored to the different texts and displayed on a separate screen.
 
-##Project Extensions
+## Project Extensions
 * Allow the user to store the texts and the data collected from them. 
 * Create a page of totals which accumulate all the data from the different texts stored. 
