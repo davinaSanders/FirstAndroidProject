@@ -12,19 +12,13 @@ import java.util.HashMap;
 public abstract class Text {
     private int entry;
     private String date;
-    protected int wordCount;
     protected HashMap<String, Integer> myWords;
 
     public Text(int entry, String date) {
         this.entry = entry;
         this.date = date;
-        this.wordCount = 0;
         this.myWords = new HashMap<>();
 
-    }
-
-    public int getWordCount() {
-        return this.wordCount;
     }
 
     public int getEntry() {
@@ -44,21 +38,21 @@ public abstract class Text {
     //getters
 
 
-    public int countSentences(String string) {
+    public double countSentences(String string) {
         return string.split("\\.").length;
     }
 
-    public int countWords(String string) {
+    public double countWords(String string) {
         return string.split(" ").length;
     }
 
-    public int countCharacters(String string) {
+    public double countCharacters(String string) {
         return string.split("").length;
     }
 
-    public int countSyllables(String string) {
+    public double countSyllables(String string) {
         String[] vowels = new String[]{"a", "e", "i", "o", "u", "y"};
-        int syllableCounter = 0;
+        double syllableCounter = 0;
         ArrayList<String> userInput = new ArrayList<>(Arrays.asList(string.replace(".", "").toLowerCase().split(" ")));
         System.out.println(userInput);
         for (String word : userInput) {

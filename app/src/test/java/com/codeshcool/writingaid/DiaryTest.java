@@ -19,10 +19,6 @@ public class DiaryTest {
         diary = new Diary(1, "01/06/2018");
     }
 
-    @Test
-    public void hasWordCount() {
-        assertEquals(0, diary.getWordCount());
-    }
 
     @Test
     public void hasEntry() {
@@ -49,23 +45,23 @@ public class DiaryTest {
 
     @Test
     public void canCountSentences() {
-        assertEquals(5, diary.countSentences("this has never been more fun. I will do this again. I love to type. Another sentence now. Even though it is not."));
+        assertEquals(5.0, diary.countSentences("this has never been more fun. I will do this again. I love to type. Another sentence now. Even though it is not."), 0.01);
 
     }
 
     @Test
     public void canCountWords() {
-        assertEquals(11, diary.countWords("this has never been more fun. I will do this again."));
+        assertEquals(11.0, diary.countWords("this has never been more fun. I will do this again."), 0.01);
     }
 
     @Test
     public void canCountCharacters() {
-        assertEquals(29, diary.countCharacters("this has never been more fun."));
+        assertEquals(29.0, diary.countCharacters("this has never been more fun."), 0.01);
     }
 
     @Test
     public void canCountSyllables() {
-        assertEquals(13, diary.countSyllables("this has never been more fun. I will do this again."));
+        assertEquals(13.0, diary.countSyllables("this has never been more fun. I will do this again."), 0.01);
     }
 
         // counters

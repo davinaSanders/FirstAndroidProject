@@ -9,18 +9,25 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.text.DateFormat;
+import java.util.Date;
+
 public class CreativeActivity extends AppCompatActivity {
     Creative creative;
     TextView analysis;
     EditText insert;
     EditText lexicalField;
+    String currentDateTime;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_creative);
-
+        currentDateTime = DateFormat.getDateTimeInstance().format(new Date());
+        creative = new Creative(1, this.currentDateTime);
+        insert = findViewById(R.id.creativeAnalysis);
+        lexicalField = findViewById(R.id.lexicalField);
         analysis = findViewById(R.id.creativeTextViewID);
 
 
@@ -40,24 +47,28 @@ public class CreativeActivity extends AppCompatActivity {
         String userField = lexicalField.getText().toString();
         creative.addLexicalField(userField);
 
-        int specialWords = creative.specialWordsCount(userInput);
+        double specialWords = creative.specialWordsCount(userInput);
         String stringSpecialWords = String.valueOf(specialWords);
 
-        int wordCount = creative.countWords(userInput);
+        double wordCount = creative.countWords(userInput);
         String stringWordCount = String.valueOf(wordCount);
 
-        int uniqueWords = creative.uniqueWordsCount(userInput);
+        double uniqueWords = creative.uniqueWordsCount(userInput);
         String stringUniqueWords = String.valueOf(uniqueWords);
 
-        int wordLength = creative.averageSentenceLength(userInput);
+        double uniqueWordsPercentage = creative.uniqueWordsPercentage(userInput);
+        String stringUniquePercentage = String.valueOf(uniqueWordsPercentage);
+
+        double wordLength = creative.averageSentenceLength(userInput);
         String stringWordLength = String.valueOf(wordLength);
 
-        int sentenceLength = creative.averageWordLength(userInput);
+        double sentenceLength = creative.averageWordLength(userInput);
         String stringSentenceLength = String.valueOf(sentenceLength);
 
         analysis.setText("Lexical Field Matches: " + stringSpecialWords
                 + "\nWord Count: " + stringWordCount
-                + "\nUnique words: " + stringUniqueWords
+//                + "\nUnique words: " + stringUniqueWords
+//                + "\nPrcentage of Unique words: " + stringUniquePercentage
                 + "\nAverage Characters per word: " + stringWordLength
                 + "\nAverage Words per sentence : " + stringSentenceLength);
 

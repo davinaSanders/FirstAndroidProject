@@ -41,10 +41,23 @@ public class EssayActivity extends AppCompatActivity {
 
     public void onButtonEssayAnalysisClick(View view){
         String userInput = insert.getText().toString();
+
         double result = essay.readabilityScore(userInput);
         String resultString = Double.toString(result);
+
+        double wordCount = essay.countWords(userInput);
+        String stringWordCount = String.valueOf(wordCount);
+
+        double wordLength = essay.averageSentenceLength(userInput);
+        String stringWordLength = String.valueOf(wordLength);
+
+        double sentenceLength = essay.averageWordLength(userInput);
+        String stringSentenceLength = String.valueOf(sentenceLength);
+
         analysis.setText("Readability score: " + resultString
-                        + "\nWord Count: " + );
+                        + "\nWord Count: " + stringWordCount
+                        + "\nAverage Word Length: " + stringWordLength
+                        + "\nAverage Sentence Length: " + stringSentenceLength);
 
     }
 

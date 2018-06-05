@@ -10,7 +10,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import java.text.DateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 
 public class DiaryActivity extends AppCompatActivity {
     TextView analysis;
@@ -38,26 +40,28 @@ public class DiaryActivity extends AppCompatActivity {
     public void onButtonDiaryAnalysisClick(View view){
         String userInput = insert.getText().toString();
 
-        int specialWords = diary.specialWordsCount(userInput);
-        String stringSpecialWords = String.valueOf(specialWords);
+        HashMap<String, Integer> specialWords = diary.specialWords(userInput);
+        String stringSpecialWords = specialWords.keySet().toString();
+//         stringSpecialWords = String.valueOf(specialWords.keySet());
 
-        int wordCount = diary.countWords(userInput);
+        double wordCount = diary.countWords(userInput);
         String stringWordCount = String.valueOf(wordCount);
 
-        int uniqueWords = diary.uniqueWordsCount(userInput);
+        ArrayList<String> uniqueWords = diary.uniqueWords(userInput);
         String stringUniqueWords = String.valueOf(uniqueWords);
 
-        int wordLength = diary.averageSentenceLength(userInput);
-        String stringWordLength = String.valueOf(wordLength);
-
-        int sentenceLength = diary.averageWordLength(userInput);
+        double sentenceLength = diary.averageSentenceLength(userInput);
         String stringSentenceLength = String.valueOf(sentenceLength);
 
-        analysis.setText("Number of words used from Lexical Field: " + stringSpecialWords
-                + "\nWord Count: " + stringWordCount
+        double wordLength = diary.averageWordLength(userInput);
+        String stringWordLength = String.valueOf(wordLength);
+
+        analysis.setText("Intensifiers: " + stringSpecialWords
                 + "\nUnique words: " + stringUniqueWords
-                + "\nAverage Characters per word: " + stringWordLength
-                + "\nAverage Words per sentence : " + stringSentenceLength);
+//                + "\n Most popular: " + stringPopularWord
+                + "\nWord Count: " + stringWordCount
+                + "\nAverage Characters pw: " + stringWordLength
+                + "\nAverage Words ps : " + stringSentenceLength);
 
     }
 }

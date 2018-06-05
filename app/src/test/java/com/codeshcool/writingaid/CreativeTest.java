@@ -19,10 +19,6 @@ public class CreativeTest {
         creative = new Creative(1, "01/06/2018");
     }
 
-    @Test
-    public void hasWordCount() {
-        assertEquals(0, creative.getWordCount());
-    }
 
     @Test
     public void hasEntry() {
@@ -56,23 +52,29 @@ public class CreativeTest {
 
     @Test
     public void canCountSentences() {
-        assertEquals(5, creative.countSentences("this has never been more fun. I will do this again. I love to type. Another sentence now. Even though it is not."));
+        assertEquals(5.0, creative.countSentences("this has never been more fun. I will do this again. I love to type. Another sentence now. Even though it is not."), 0.01);
 
     }
 
     @Test
     public void canCountWords() {
-        assertEquals(11, creative.countWords("this has never been more fun. I will do this again."));
+        assertEquals(11.0, creative.countWords("this has never been more fun. I will do this again."), 0.01);
     }
 
     @Test
     public void canCountCharacters() {
-        assertEquals(29, creative.countCharacters("this has never been more fun."));
+        assertEquals(29.0, creative.countCharacters("this has never been more fun."), 0.01);
     }
 
     @Test
     public void canCountSyllables() {
-        assertEquals(13, creative.countSyllables("this has never been more fun. I will do this again."));
+        assertEquals(13.0, creative.countSyllables("this has never been more fun. I will do this again."), 0.01);
+    }
+
+    @Test
+    public void canCountSyllables__whenWordsEndinE(){
+        assertEquals(5.0, creative.countSyllables("I have a note yes"), 0.01);
+
     }
 
     // counters
@@ -111,5 +113,17 @@ public class CreativeTest {
     @Test
     public void hasRepeatedWordsCount () {
         assertEquals(5, creative.repeatedWordsCount("this and then why how what green this and then why how how how"));
+    }
+
+
+    @Test
+    public void hasUniqueWordsPercentage(){
+        assertEquals(25.0, creative.uniqueWordsPercentage("this this this this hello never always paper paper paper paper paper"), 0.01);
+    }
+
+    @Test
+    public void hasReadabilityScore(){
+        assertEquals(7.0, creative.readabilityScore("The void keyword indicates that no value should be returned by the method after it executes all the logic in the method. If we do want the method to return a value after it finishes running then we can specify the return type. We can use data keywords to achieve this eg int, char etc to specify that a method should return a value of that type. When you use an in, for example, you would also use the return method and return a number. "), 0.01);
+
     }
 }
