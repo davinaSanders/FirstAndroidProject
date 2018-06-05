@@ -42,7 +42,6 @@ public class DiaryActivity extends AppCompatActivity {
 
         HashMap<String, Integer> specialWords = diary.specialWords(userInput);
         String stringSpecialWords = specialWords.keySet().toString();
-//         stringSpecialWords = String.valueOf(specialWords.keySet());
 
         double wordCount = diary.countWords(userInput);
         String stringWordCount = String.valueOf(wordCount);
@@ -60,8 +59,8 @@ public class DiaryActivity extends AppCompatActivity {
                 + "\nUnique words: " + stringUniqueWords
 //                + "\n Most popular: " + stringPopularWord
                 + "\nWord Count: " + stringWordCount
-                + "\nAverage Characters pw: " + stringWordLength
-                + "\nAverage Words ps : " + stringSentenceLength);
+                + "\nAverage Word Length: " + stringWordLength
+                + "\nAverage Sentence Length : " + stringSentenceLength);
 
     }
 }

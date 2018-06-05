@@ -22,7 +22,6 @@ public class Creative extends Text implements IRead, ICount, Serializable {
 
     }
 
-
     public ArrayList<String> getlexicalField(){
         return this.lexicalField;
 
@@ -51,7 +50,6 @@ public class Creative extends Text implements IRead, ICount, Serializable {
         return uniques.size();
 
     }
-
 
     // number of unrepeated words
 
@@ -94,7 +92,6 @@ public class Creative extends Text implements IRead, ICount, Serializable {
 
     }
 
-
     public double uniqueWordsPercentage(String string){
         double unrepeated = this.uniqueWordsCount(string);
         double wordCount = this.countWords(string);
@@ -104,7 +101,6 @@ public class Creative extends Text implements IRead, ICount, Serializable {
 
 
     }
-
 
     public int specialWordsCount(String string) {
         ArrayList<String> userInput = new ArrayList<>(Arrays.asList(string.split(" ")));
@@ -140,9 +136,7 @@ public class Creative extends Text implements IRead, ICount, Serializable {
         return myWords;
     }
 
-
     // ICount methods
-
 
     public double readabilityScore(String string){
         return (0.39 * (countWords(string)/countSentences(string))) + (11.8 * (countSyllables(string)/countWords(string))) - 15.59;

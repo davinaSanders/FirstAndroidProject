@@ -5,6 +5,7 @@ import com.codeshcool.writingaid.Behaviours.ICount;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Map;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -120,14 +121,15 @@ public class Diary extends Text implements ICount, Serializable {
 
     //ICount methods
 
-//    public String mostPopularWord(String string) {
-//        this.addToMap(string);
-//        for (Map.Entry me : myWords.entrySet()) {
-//            if (Integer.valueOf((int) me.getKey()) > 1) {
-//                repeats.add(me.getKey().toString());
-//            }
-//        }
-//
-//    }
+    public String mostPopularWord(String string) {
+        this.addToMap(string);
+        for (Map.Entry me : myWords.entrySet()) {
+            if (Integer.valueOf((int) me.getKey()) > 1) {
+                repeats.add(me.getKey().toString());
+                Collections.max(myWords);
+            }
+        }
+
+    }
 
 }

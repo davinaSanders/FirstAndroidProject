@@ -47,13 +47,13 @@ public class CreativeActivity extends AppCompatActivity {
         String userField = lexicalField.getText().toString();
         creative.addLexicalField(userField);
 
-        double specialWords = creative.specialWordsCount(userInput);
+        int specialWords = creative.specialWordsCount(userInput);
         String stringSpecialWords = String.valueOf(specialWords);
 
         double wordCount = creative.countWords(userInput);
         String stringWordCount = String.valueOf(wordCount);
 
-        double uniqueWords = creative.uniqueWordsCount(userInput);
+        int uniqueWords = creative.uniqueWordsCount(userInput);
         String stringUniqueWords = String.valueOf(uniqueWords);
 
         double uniqueWordsPercentage = creative.uniqueWordsPercentage(userInput);
@@ -67,8 +67,8 @@ public class CreativeActivity extends AppCompatActivity {
 
         analysis.setText("Lexical Field Matches: " + stringSpecialWords
                 + "\nWord Count: " + stringWordCount
-//                + "\nUnique words: " + stringUniqueWords
-//                + "\nPrcentage of Unique words: " + stringUniquePercentage
+                + "\nUnique words: " + stringUniqueWords
+                + "\nPrcentage of Unique words: " + stringUniquePercentage
                 + "\nAverage Characters per word: " + stringWordLength
                 + "\nAverage Words per sentence : " + stringSentenceLength);
 

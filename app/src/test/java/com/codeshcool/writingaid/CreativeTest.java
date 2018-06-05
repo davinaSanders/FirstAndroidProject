@@ -121,6 +121,12 @@ public class CreativeTest {
         assertEquals(25.0, creative.uniqueWordsPercentage("this this this this hello never always paper paper paper paper paper"), 0.01);
     }
 
+
+    @Test
+    public void hasUniqueWordsPercentage__one(){
+        assertEquals(6.25, creative.uniqueWordsPercentage("this paper paper this this this hello never always paper paper never hello paper paper paper"), 0.01);
+    }
+
     @Test
     public void hasReadabilityScore(){
         assertEquals(7.0, creative.readabilityScore("The void keyword indicates that no value should be returned by the method after it executes all the logic in the method. If we do want the method to return a value after it finishes running then we can specify the return type. We can use data keywords to achieve this eg int, char etc to specify that a method should return a value of that type. When you use an in, for example, you would also use the return method and return a number. "), 0.01);
