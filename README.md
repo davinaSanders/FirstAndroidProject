@@ -15,6 +15,7 @@ The app should help them keep track of statistics that may aid them in their wri
 * Readability score
 * Sentence length
 * Word length
+
 The feedback types should be tailored to the different texts and displayed on a separate screen.
 
 ## Project Extensions
